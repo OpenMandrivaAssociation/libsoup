@@ -1,9 +1,10 @@
 %define api_version 2.2
 %define lib_major	8
 %define lib_name	%mklibname soup- %{api_version} %{lib_major}
+%define develname %mklibname -d soup- %{api_version} 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.2.100
+Version: 2.2.101
 Release: %mkrel 1
 License: GPL/LGPL
 Group: System/Libraries
@@ -37,7 +38,7 @@ and implementing SOAP methods.
 
 This package contains libraries used by soup.
 
-%package -n %{lib_name}-devel
+%package -n %develname
 Summary:        Development libraries, header files and utilities for soup
 Group:          Development/GNOME and GTK+
 Provides:	%{name}-%{api_version}-devel = %{version}-%{release}
@@ -45,8 +46,9 @@ Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}
 Requires:	glib2-devel
 Conflicts:	%{_lib}soup-2.2_7-devel
+Obsoletes: %mklibname soup- 2.2 8
 
-%description -n %{lib_name}-devel
+%description -n %develname
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
 
 It provides an queued asynchronous callback-based mechanism for sending and
@@ -80,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README COPYING ChangeLog AUTHORS
 %{_libdir}/*.so.%{lib_major}*
 
-%files -n %{lib_name}-devel
+%files -n %develname
 %defattr(-,root,root,-)
 %doc %{_datadir}/gtk-doc/html/%{name}
 %{_libdir}/*.so
