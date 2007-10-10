@@ -5,7 +5,7 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.2.101
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL/LGPL
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -46,7 +46,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}
 Requires:	glib2-devel
 Conflicts:	%{_lib}soup-2.2_7-devel
-Obsoletes: %mklibname soup- 2.2 8
+Obsoletes: %mklibname -d soup- 2.2 8
 
 %description -n %develname
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
