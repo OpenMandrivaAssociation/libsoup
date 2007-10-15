@@ -4,8 +4,8 @@
 %define develname %mklibname -d soup- %{api_version} 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.2.101
-Release: %mkrel 2
+Version: 2.2.102
+Release: %mkrel 1
 License: GPL/LGPL
 Group: System/Libraries
 URL: http://www.gnome.org/
