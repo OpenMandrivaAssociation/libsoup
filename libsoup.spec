@@ -5,7 +5,7 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.2.104
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL/LGPL
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -79,12 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %{lib_name}
 %defattr(-,root,root,-)
-%doc README COPYING ChangeLog AUTHORS
+%doc README COPYING AUTHORS
 %{_libdir}/*.so.%{lib_major}*
 
 %files -n %develname
 %defattr(-,root,root,-)
 %doc %{_datadir}/gtk-doc/html/%{name}
+%doc ChangeLog
 %{_libdir}/*.so
 %{_libdir}/*.la
 %{_libdir}/*.a
