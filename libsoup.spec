@@ -5,7 +5,7 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.3.0
+Version: 2.3.0.1
 Release: %mkrel 1
 License: GPL/LGPL
 Group: System/Libraries
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %{lib_name}
 %defattr(-,root,root,-)
-%doc README COPYING AUTHORS
+%doc README COPYING AUTHORS NEWS
 %{_libdir}/*.so.%{lib_major}*
 
 %files -n %develname
