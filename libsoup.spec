@@ -1,11 +1,11 @@
 %define api_version 2.4
-%define lib_major	0
+%define lib_major	1
 %define lib_name	%mklibname soup- %{api_version} %{lib_major}
 %define develname %mklibname -d soup- %{api_version} 
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.3.0.1
+Version: 2.3.2
 Release: %mkrel 1
 License: GPL/LGPL
 Group: System/Libraries
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %develname
 %defattr(-,root,root,-)
-%doc %{_datadir}/gtk-doc/html/%{name}
+%{_datadir}/gtk-doc/html/%{name}-%api_version
 %doc ChangeLog
 %{_libdir}/*.so
 %{_libdir}/*.la
