@@ -6,11 +6,13 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.4.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL/LGPL
 Group: System/Libraries
 URL: http://www.gnome.org/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+# (fc) 2.4.0-2mdv various SVN fixes (HTTP Digest Auth)
+Patch0: libsoup-2.4.0-svnfixes.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
@@ -61,6 +63,7 @@ This package contains the files necessary to develop applications with soup.
 
 %prep
 %setup -q
+%patch0 -p1 -b .svnfixes
 
 %build
 %configure2_5x --enable-gtk-doc
