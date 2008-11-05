@@ -16,6 +16,7 @@ Patch: libsoup-2.25.1-fix-linking.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
+BuildRequires: sqlite3-devel
 BuildRequires: libGConf2-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
