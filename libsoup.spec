@@ -20,6 +20,8 @@ BuildRequires: sqlite3-devel
 BuildRequires: libGConf2-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
+# gw libtool dep
+BuildRequires: dbus-glib-devel
 
 %description
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
@@ -65,8 +67,8 @@ This package contains the files necessary to develop applications with soup.
 
 %prep
 %setup -q
-%patch -p1
-autoconf
+%patch -p0
+automake
 
 %build
 %configure2_5x --enable-gtk-doc
