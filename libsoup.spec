@@ -5,21 +5,20 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.25.4
+Version: 2.25.5
 Release: %mkrel 1
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch: libsoup-2.25.5-linking.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
 BuildRequires: sqlite3-devel
-BuildRequires: libGConf2-devel
+BuildRequires: libproxy-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
-# gw libtool dep
-BuildRequires: dbus-glib-devel
 
 %description
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
@@ -65,6 +64,8 @@ This package contains the files necessary to develop applications with soup.
 
 %prep
 %setup -q
+%patch -p1
+autoreconf -fi
 
 %build
 %configure2_5x --enable-gtk-doc
