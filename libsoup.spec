@@ -17,6 +17,7 @@ BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
 BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
+BuildRequires: libGConf2.0-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
 
