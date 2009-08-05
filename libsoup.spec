@@ -100,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %develname
 %defattr(-,root,root,-)
 %{_datadir}/gtk-doc/html/%{name}-%api_version
-%doc ChangeLog
+#%doc ChangeLog
 %{_libdir}/*.so
 %{_libdir}/*.la
 %{_libdir}/*.a
