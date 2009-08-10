@@ -5,16 +5,13 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.27.5
-Release: %mkrel 2
+Version: 2.27.90
+Release: %mkrel 1
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch: libsoup-2.25.5-linking.patch
-#gw from git, fix strict-aliasing warnings caused by libsoup headers
-# http://bugzilla.gnome.org/show_bug.cgi?id=588771
-Patch1: libsoup-fix-warnings-in-headers.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
@@ -69,7 +66,6 @@ This package contains the files necessary to develop applications with soup.
 %prep
 %setup -q
 %patch -p1
-%patch1 -p1
 autoreconf -fi
 
 %build
