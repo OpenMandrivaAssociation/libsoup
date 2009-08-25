@@ -17,6 +17,7 @@ BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
 BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
+BuildRequires: gnome-keyring-devel
 BuildRequires: libGConf2-devel dbus-glib-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
