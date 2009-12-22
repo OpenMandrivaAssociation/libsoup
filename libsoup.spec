@@ -6,18 +6,21 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.29.3
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch: libsoup-2.25.5-linking.patch
+#gw from git, unbreak gir build:
+#https://bugzilla.gnome.org/show_bug.cgi?id=603696
+Patch1: libsoup-fix-signals-for-introspection.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
 BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
-BuildRequires: gnome-keyring-devel
+BuildRequires: libgnome-keyring-devel
 BuildRequires: libGConf2-devel dbus-glib-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
@@ -70,7 +73,8 @@ This package contains the files necessary to develop applications with soup.
 autoreconf -fi
 
 %build
-%configure2_5x --enable-gtk-doc
+%configure2_5x
+# --enable-gtk-doc
 %make
 
 %install
