@@ -6,7 +6,7 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.29.5
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -54,6 +54,8 @@ Provides:	%{name}-%{api_version}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{lib_name} = %{version}
 Requires:	glib2-devel
+#gw .la dep:
+Requires:	eggdbus-devel
 Conflicts:	%{_lib}soup-2.2_7-devel
 Obsoletes: %mklibname -d soup- 2.2 8
 
