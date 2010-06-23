@@ -5,8 +5,8 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.30.1
-Release: %mkrel 2
+Version: 2.30.2
+Release: %mkrel 1
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -72,7 +72,6 @@ This package contains the files necessary to develop applications with soup.
 %prep
 %setup -q
 %patch -p1
-autoreconf -fi
 
 %build
 %configure2_5x
