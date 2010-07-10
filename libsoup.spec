@@ -2,6 +2,8 @@
 %define lib_major	1
 %define lib_name	%mklibname soup- %{api_version} %{lib_major}
 %define develname %mklibname -d soup- %{api_version} 
+%define build_check     0
+%{?_with_check: %{expand: %%global build_check 1}}
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
@@ -24,6 +26,10 @@ BuildRequires: libgnome-keyring-devel
 BuildRequires: libGConf2-devel dbus-glib-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
+%if %build_check
+#gw for running checks
+BuildRequires: apache-mod_ssl apache-mod_proxy apache-mod_php php-xmlrpc
+%endif
 
 %description
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
@@ -74,7 +80,10 @@ This package contains the files necessary to develop applications with soup.
 %patch -p1
 
 %build
-%configure2_5x
+%configure2_5x \
+%if %build_check
+ --with-apache-module-dir=/etc/httpd/*modules \
+%endif
 # --enable-gtk-doc
 %make
 
@@ -82,6 +91,11 @@ This package contains the files necessary to develop applications with soup.
 rm -rf $RPM_BUILD_ROOT
 
 %makeinstall_std
+
+%if %build_check
+%check
+make check
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
