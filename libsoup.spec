@@ -7,8 +7,8 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.30.2
-Release: %mkrel 2
+Version: 2.31.2
+Release: %mkrel 3
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -24,6 +24,7 @@ BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
 BuildRequires: libgnome-keyring-devel
 BuildRequires: libGConf2-devel dbus-glib-devel
+BuildRequires: gobject-introspection-devel
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
 %if %build_check
@@ -42,6 +43,7 @@ and implementing SOAP methods.
 %package -n %{lib_name}
 Summary:        Libraries for soup
 Group:          System/Libraries
+Conflicts: gir-repository < 0.6.5-12.1
 
 %description -n %{lib_name}
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
@@ -64,6 +66,7 @@ Requires:	glib2-devel
 Requires:	eggdbus-devel
 Conflicts:	%{_lib}soup-2.2_7-devel
 Obsoletes: %mklibname -d soup- 2.2 8
+Conflicts: gir-repository < 0.6.5-12.1
 
 %description -n %develname
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
@@ -78,6 +81,7 @@ This package contains the files necessary to develop applications with soup.
 %prep
 %setup -q
 %apply_patches
+autoreconf -fi
 
 %build
 %configure2_5x \
@@ -112,10 +116,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc README COPYING AUTHORS NEWS
 %{_libdir}/*.so.%{lib_major}*
+%_libdir/girepository-1.0/Soup-%{api_version}.typelib
+%_libdir/girepository-1.0/SoupGNOME-%{api_version}.typelib
 
 %files -n %develname
 %defattr(-,root,root,-)
 %{_datadir}/gtk-doc/html/%{name}-%api_version
+%_datadir/gir-1.0/Soup-%{api_version}.gir
+%_datadir/gir-1.0/SoupGNOME-%{api_version}.gir
 #%doc ChangeLog
 %{_libdir}/*.so
 %{_libdir}/*.la
