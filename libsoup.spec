@@ -16,6 +16,7 @@ Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.b
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
+BuildRequires: %{mklibname glib-networking}
 BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
 BuildRequires: libgnome-keyring-devel
@@ -40,6 +41,7 @@ and implementing SOAP methods.
 Summary:        Libraries for soup
 Group:          System/Libraries
 Conflicts: gir-repository < 0.6.5-12.1
+Requires: %{mklibname glib-networking}
 
 %description -n %{lib_name}
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
