@@ -16,7 +16,7 @@ Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.b
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: gnutls-devel
-BuildRequires: %{mklibname glib-networking}
+BuildRequires: glib-networking
 BuildRequires: sqlite3-devel
 BuildRequires: libproxy-devel
 BuildRequires: libgnome-keyring-devel
