@@ -8,19 +8,16 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.34.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
-BuildRequires: gnutls-devel
 BuildRequires: glib-networking
 BuildRequires: sqlite3-devel
-BuildRequires: libproxy-devel
 BuildRequires: libgnome-keyring-devel
-BuildRequires: libGConf2-devel dbus-glib-devel
 BuildRequires: gobject-introspection-devel >= 0.9.5
 BuildRequires: gtk-doc
 BuildRequires: libxml2-devel
