@@ -7,12 +7,12 @@
 
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
-Version: 2.34.2
+Version: 2.34.3
 Release: %mkrel 1
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: glib2-devel
 BuildRequires: glib-networking
