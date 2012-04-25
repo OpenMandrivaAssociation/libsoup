@@ -12,7 +12,7 @@
 Summary: SOAP (Simple Object Access Protocol) implementation
 Name: libsoup
 Version: 2.38.1
-Release: 2
+Release: 3
 License: LGPLv2
 Group: System/Libraries
 URL: http://www.gnome.org/
@@ -71,6 +71,7 @@ Summary:	Development libraries, header files and utilities for soup
 Group:		Development/GNOME and GTK+
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
+Requires:	%{girname} = %{version}-%{release}
 
 %description -n %{develname}
 This package contains the files necessary to develop applications with soup.
