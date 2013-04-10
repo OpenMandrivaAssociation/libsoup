@@ -1,18 +1,18 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-%define api	2.4
-%define major	1
-%define libname	%mklibname soup- %{api} %{major}
-%define girname	%mklibname soup-gir %{api}
-%define devname	%mklibname -d soup- %{api} 
+%define api 2.4
+%define major 1
+%define libname %mklibname soup- %{api} %{major}
+%define girname %mklibname soup-gir %{api}
+%define devname %mklibname -d soup- %{api} 
 
-%define build_check		0
-%define build_doc		0
+%define build_check 0
+%define build_doc 0
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
 Version:	2.42.0
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.gnome.org/
@@ -49,6 +49,7 @@ and implementing SOAP methods.
 %package -n %{libname}
 Summary:	Libraries for soup
 Group:		System/Libraries
+Obsoletes:	%{mklibname soup- 2.2_ 8} <= 2.2.105-7
 
 %description -n %{libname}
 Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
