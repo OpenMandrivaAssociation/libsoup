@@ -13,8 +13,8 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.44.2
-Release:	7
+Version:	2.48.0
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.gnome.org/
@@ -104,7 +104,7 @@ This package contains the files necessary to develop applications with soup.
 %apply_patches
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--disable-tls-check \
 %if %build_check
