@@ -3,5 +3,6 @@ removed_sources:
   libsoup-2.42.0.tar.xz: da2b462d8be43dfe5fc87c0529fe8e14cb90384d
   libsoup-2.43.1.tar.xz: b57215d99d93f60b3d45ae3d5e16fac3ef53cbbb
   libsoup-2.44.2.tar.xz: d469abbeaffca9b157f50ce079662078e239d962
-sources:
   libsoup-2.48.0.tar.xz: 2cb87c88a88c8c8b3948e0cfcb25eeb89db56f08
+sources:
+  libsoup-2.50.0.tar.xz: 8bd422bd5d19b5e2630bbb35dfb06354b1d56442
