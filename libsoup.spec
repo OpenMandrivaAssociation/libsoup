@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sqlite3)
+BuildRequires:	pkgconfig(vapigen)
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
