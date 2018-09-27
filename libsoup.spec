@@ -13,7 +13,7 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.62.2
+Version:	2.64.1
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
