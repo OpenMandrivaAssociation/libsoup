@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 %if %{build_doc}
