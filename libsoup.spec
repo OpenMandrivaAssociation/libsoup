@@ -9,23 +9,25 @@
 %define devname %mklibname -d soup %{api} 
 
 %define build_check 0
-%define build_doc 0
+%define build_doc 1
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.64.2
+Version:	2.66.1
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.gnome.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	meson
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(glib-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
+BuildRequires:  pkgconfig(krb5-gssapi)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
@@ -106,20 +108,19 @@ This package contains the files necessary to develop applications with soup.
 %apply_patches
 
 %build
-%configure \
-	--disable-static \
-	--disable-tls-check \
+%meson \
+	-Dtls_check=false \
 %if %build_check
 	--with-apache-module-dir=/etc/httpd/*modules \
 %endif
 %if %{build_doc}
-	--enable-gtk-doc
+	-Ddoc=true
 %endif
 
-%make
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 %find_lang %{name}
 
 %if %{build_check}
