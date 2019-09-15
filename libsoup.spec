@@ -22,6 +22,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{ver
 
 BuildRequires:	meson
 BuildRequires:	intltool
+BuildRequires:	cmake
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(glib-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
@@ -32,6 +33,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
+BuildRequires:	pkgconfig(libbrotlidec)
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
