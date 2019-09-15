@@ -111,8 +111,8 @@ This package contains the files necessary to develop applications with soup.
 
 %build
 %meson \
-	-Dntlm=false \
-	-Dntlm_auth=false \
+	-Dntlm=disabled \
+	-Dntlm_auth=disabled \
 	-Dtls_check=false \
 %if %build_check
 	--with-apache-module-dir=/etc/httpd/*modules \
