@@ -13,7 +13,7 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.66.2
+Version:	2.68.1
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -22,6 +22,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{ver
 
 BuildRequires:	meson
 BuildRequires:	intltool
+BuildRequires:	cmake
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(glib-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
@@ -32,6 +33,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
+BuildRequires:	pkgconfig(libbrotlidec)
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
@@ -109,6 +111,8 @@ This package contains the files necessary to develop applications with soup.
 
 %build
 %meson \
+	-Dntlm=disabled \
+	-Dntlm_auth=disabled \
 	-Dtls_check=false \
 %if %build_check
 	--with-apache-module-dir=/etc/httpd/*modules \
@@ -142,7 +146,7 @@ make check
 
 %files -n %{devname}
 %doc README COPYING AUTHORS NEWS
-%{_datadir}/gtk-doc/html/%{name}-%api
+#{_datadir}/gtk-doc/html/%{name}-%api
 %{_datadir}/gir-1.0/Soup-%{api}.gir
 %{_datadir}/gir-1.0/SoupGNOME-%{api}.gir
 %{_datadir}/vala/vapi/libsoup-2.4.*
