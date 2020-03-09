@@ -23,6 +23,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{ver
 BuildRequires:	meson
 BuildRequires:	intltool
 BuildRequires:	cmake
+BuildRequires:  krb5
 BuildRequires:	curl
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
