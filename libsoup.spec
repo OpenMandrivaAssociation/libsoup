@@ -33,6 +33,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:  pkgconfig(krb5-gssapi)
 BuildRequires:	pkgconfig(krb5)
+BuildRequires:	krb5-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
