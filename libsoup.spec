@@ -13,7 +13,7 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.68.4
+Version:	2.70.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -23,12 +23,17 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{ver
 BuildRequires:	meson
 BuildRequires:	intltool
 BuildRequires:	cmake
+BuildRequires:  krb5
+BuildRequires:	curl
+BuildRequires:  pkgconfig(libcurl)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(glib-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gnome-keyring-1)
 BuildRequires:  pkgconfig(krb5-gssapi)
+BuildRequires:	pkgconfig(krb5)
+BuildRequires:	krb5-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
