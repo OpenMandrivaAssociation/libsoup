@@ -39,6 +39,7 @@ BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
+BuildRequires:	pkgconfig(sysprof-capture-4)
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
