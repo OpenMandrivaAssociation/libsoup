@@ -40,6 +40,7 @@ BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
 BuildRequires:	pkgconfig(sysprof-capture-4)
+BuildRequires:	pkgconfig(libnghttp2)
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
