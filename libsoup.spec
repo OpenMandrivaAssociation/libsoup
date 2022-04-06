@@ -152,7 +152,7 @@ make check
 
 %files -n %{devname}
 %doc README COPYING AUTHORS NEWS
-#{_datadir}/gtk-doc/html/%{name}-%api
+%doc %{_datadir}/gtk-doc/html/%{name}-%api
 %{_datadir}/gir-1.0/Soup-%{api}.gir
 %{_datadir}/gir-1.0/SoupGNOME-%{api}.gir
 %{_datadir}/vala/vapi/libsoup-2.4.*
