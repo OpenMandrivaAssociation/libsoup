@@ -13,7 +13,7 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
-Version:	2.74.1
+Version:	2.74.2
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -124,7 +124,7 @@ This package contains the files necessary to develop applications with soup.
 	--with-apache-module-dir=/etc/httpd/*modules \
 %endif
 %if %{build_doc}
-	-Ddoc=true
+	-Dgtk_doc=true
 %endif
 
 %meson_build
