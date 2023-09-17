@@ -14,7 +14,7 @@
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
 Version:	2.74.3
-Release:	4
+Release:	5
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.gnome.org/
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig(libpsl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
-BuildRequires:	pkgconfig(sysprof-capture-4)
+BuildRequires:	lib64sysprof-devel
 %if %{build_doc}
 BuildRequires:	gtk-doc
 %endif
