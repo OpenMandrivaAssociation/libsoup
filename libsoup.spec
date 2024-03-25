@@ -14,11 +14,11 @@
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup
 Version:	2.74.3
-Release:	5
+Release:	6
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.gnome.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://www.gnome.org/
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
 BuildRequires:	intltool
